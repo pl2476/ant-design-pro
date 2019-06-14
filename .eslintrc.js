@@ -10,8 +10,8 @@ module.exports = {
     jasmine: true,
   },
   globals: {
-    APP_TYPE: true,
     page: true,
+    ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION: true,
   },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
@@ -24,9 +24,10 @@ module.exports = {
       2,
       {
         optionalDependencies: true,
-        devDependencies: ['**/tests/**.js', '/mock/**.js', '**/**.test.js'],
+        devDependencies: ['**/tests/**.js', '/mock/**/**.js', '**/**.test.js'],
       },
     ],
+    'import/no-cycle': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
@@ -34,6 +35,8 @@ module.exports = {
     'linebreak-style': 0,
   },
   settings: {
-    polyfills: ['fetch', 'promises', 'url'],
+    // support import modules from TypeScript files in JavaScript files
+    'import/resolver': { node: { extensions: ['.js', '.ts', '.tsx'] } },
+    polyfills: ['fetch', 'promises', 'url', 'object-assign'],
   },
 };
