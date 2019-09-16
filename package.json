@@ -6,6 +6,7 @@
   "scripts": {
     "analyze": "cross-env ANALYZE=1 umi build",
     "build": "umi build",
+    "ui":"umi ui",
     "deploy": "cross-env ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION=site npm run site && npm run gh-pages",
     "docker-hub:build": "docker build  -f Dockerfile.hub -t  ant-design-pro ./",
     "docker-prod:build": "docker-compose -f ./docker/docker-compose.yml build",
@@ -24,7 +25,7 @@
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
-    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:prettier": "check-prettier lint",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "prettier": "prettier -c --write \"**/*\"",
@@ -138,8 +139,7 @@
     ],
     "ignoreDependencies": [
       "netlify*",
-      "serverless",
-      "^express$"
+      "serverless"
     ],
     "ignore": [
       ".dockerignore",
@@ -154,8 +154,8 @@
       "README.*.md",
       "azure-pipelines.yml",
       "docker",
+      "CNAME",
       "create-umi"
     ]
   }
 }
-
