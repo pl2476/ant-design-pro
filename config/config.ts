@@ -70,44 +70,6 @@ if (isAntDesignProPreview) {
   plugins.push(['umi-plugin-antd-theme', themePluginConfig]);
 }
 
-if (!TEST && !isAntDesignProPreview) {
-  plugins.push([
-    'umi-plugin-antd-theme',
-    {
-      theme: [
-        {
-          key: 'dark',
-          fileName: 'dark.css',
-          theme: 'dark',
-        },
-        {
-          key: 'dust',
-          fileName: 'dust.css',
-          modifyVars: {
-            '@primary-color': '#F5222D',
-          },
-        },
-        {
-          key: 'dust',
-          theme: 'dark',
-          fileName: 'dark-dust.css',
-          modifyVars: {
-            '@primary-color': '#F5222D',
-          },
-        },
-        {
-          key: 'volcano',
-          theme: 'dark',
-          fileName: 'dark-volcano.css',
-          modifyVars: {
-            '@primary-color': '#FA541C',
-          },
-        },
-      ],
-    },
-  ]);
-}
-
 export default {
   plugins,
   block: {
@@ -177,7 +139,6 @@ export default {
   // Theme for antd: https://ant.design/docs/react/customize-theme-cn
   theme: {
     // ...darkTheme,
-    'primary-color': primaryColor,
   },
   define: {
     ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION:
