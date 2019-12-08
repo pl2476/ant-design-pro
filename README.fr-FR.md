@@ -1,4 +1,4 @@
-[English](./README.md) | [简体中文](./README.zh-CN.md) | [Русский](./README.ru-RU.md) | [Türkçe](./README.tr-TR.md) | [日本語](./README.ja-JP.md) | Français
+[English](./README.md) | [简体中文](./README.zh-CN.md) | [Русский](./README.ru-RU.md) | [Türkçe](./README.tr-TR.md) | [日本語](./README.ja-JP.md) | Français | [Português](./README.pt-BR.md)
 
 <h1 align="center">Ant Design Pro</h1>
 
@@ -79,6 +79,8 @@ Nous avons besoin de votre aide: https://github.com/ant-design/ant-design-pro/is
 ### Utiliser bash
 
 ```bash
+$ mkdir <your-project-name>
+$ cd <your-project-name>
 $ yarn create umi  # or npm create umi
 
 # Choose ant-design-pro:
@@ -89,6 +91,7 @@ $ yarn create umi  # or npm create umi
   library         - Create a library with umi.
   plugin          - Create a umi plugin.
 
+$ git init
 $ npm install
 $ npm start         # visit http://localhost:8000
 ```
