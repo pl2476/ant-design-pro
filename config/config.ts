@@ -46,7 +46,7 @@ const plugins: IPlugin[] = [
       // dll features https://webpack.js.org/plugins/dll-plugin/
       // dll: {
       //   include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
-      //   exclude: ['@babel/runtime', 'netlify-lambda'],
+      //   exclude: ['@babel/runtime'],
       // },
     },
   ],
@@ -73,7 +73,7 @@ if (isAntDesignProPreview) {
   plugins.push([
     'umi-plugin-pro',
     {
-      serverUrl: 'https://us-central1-antd-pro.cloudfunctions.net/api',
+      serverUrl: 'https://proapi.azurewebsites.net',
     },
   ]);
 
