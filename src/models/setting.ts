@@ -1,4 +1,4 @@
-import { Reducer } from 'redux';
+import { Reducer } from 'umi';
 import defaultSettings, { DefaultSettings } from '../../config/defaultSettings';
 
 export interface SettingModelType {
@@ -9,7 +9,7 @@ export interface SettingModelType {
   };
 }
 
-const updateColorWeak: (colorWeak: boolean) => void = colorWeak => {
+const updateColorWeak: (colorWeak: boolean) => void = (colorWeak) => {
   const root = document.getElementById('root');
   if (root) {
     root.className = colorWeak ? 'colorWeak' : '';
