@@ -59,7 +59,7 @@
   ],
   "dependencies": {
     "@ant-design/icons": "^4.0.0",
-    "@ant-design/pro-layout": "^5.0.8",
+    "@ant-design/pro-layout": "^5.0.16",
     "@ant-design/pro-table": "2.3.4",
     "antd": "4.3.3",
     "classnames": "^2.2.6",
@@ -80,7 +80,7 @@
     "@types/classnames": "^2.2.7",
     "@types/express": "^4.17.0",
     "@types/history": "^4.7.2",
-    "@types/jest": "^25.1.0",
+    "@types/jest": "^26.0.0",
     "@types/lodash": "^4.14.144",
     "@types/qs": "^6.5.3",
     "@types/react": "^16.9.17",
