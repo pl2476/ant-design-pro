@@ -23,10 +23,10 @@
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
-    "lint:prettier": "prettier --check \"**/*\" --end-of-line auto",
+    "lint:prettier": "prettier --check \"src/**/*\" --end-of-line auto",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "precommit": "lint-staged",
-    "prettier": "prettier -c --write \"**/*\"",
+    "prettier": "prettier -c --write \"src/**/*\"",
     "site": "npm run fetch:blocks && npm run build",
     "start": "umi dev",
     "start:dev": "cross-env REACT_APP_ENV=dev MOCK=none umi dev",
@@ -54,15 +54,15 @@
   ],
   "dependencies": {
     "@ant-design/icons": "^4.0.0",
-    "@ant-design/pro-descriptions": "^1.0.4",
-    "@ant-design/pro-layout": "^6.4.8",
-    "@ant-design/pro-table": "^2.5.13",
-    "antd": "^4.5.3",
+    "@ant-design/pro-descriptions": "^1.0.16",
+    "@ant-design/pro-layout": "^6.4.16",
+    "@ant-design/pro-table": "^2.7.2",
+    "@umijs/route-utils": "^1.0.32",
+    "antd": "^4.6.3",
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
     "moment": "^2.25.3",
     "omit.js": "^2.0.2",
-    "path-to-regexp": "2.4.0",
     "qs": "^6.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -104,7 +104,7 @@
     "pro-download": "1.0.1",
     "puppeteer-core": "^5.0.0",
     "stylelint": "^13.0.0",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.3"
   },
   "engines": {
     "node": ">=10.0.0"
