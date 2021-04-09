@@ -10,22 +10,22 @@ import {
 } from '@ant-design/pro-form';
 import { useIntl, FormattedMessage } from 'umi';
 
-import { TableListItem } from '../data.d';
+import type { TableListItem } from '../data.d';
 
-export interface FormValueType extends Partial<TableListItem> {
+export type FormValueType = {
   target?: string;
   template?: string;
   type?: string;
   time?: string;
   frequency?: string;
-}
+} & Partial<TableListItem>;
 
-export interface UpdateFormProps {
+export type UpdateFormProps = {
   onCancel: (flag?: boolean, formVals?: FormValueType) => void;
   onSubmit: (values: FormValueType) => Promise<void>;
   updateModalVisible: boolean;
   values: Partial<TableListItem>;
-}
+};
 
 const UpdateForm: React.FC<UpdateFormProps> = (props) => {
   const intl = useIntl();
@@ -46,7 +46,9 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
             })}
             visible={props.updateModalVisible}
             footer={submitter}
-            onCancel={() => props.onCancel()}
+            onCancel={() => {
+              props.onCancel();
+            }}
           >
             {dom}
           </Modal>
@@ -70,6 +72,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
             id: 'pages.searchTable.updateForm.ruleName.nameLabel',
             defaultMessage: '规则名称',
           })}
+          width="md"
           rules={[
             {
               required: true,
@@ -84,6 +87,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
         />
         <ProFormTextArea
           name="desc"
+          width="md"
           label={intl.formatMessage({
             id: 'pages.searchTable.updateForm.ruleDesc.descLabel',
             defaultMessage: '规则描述',
@@ -118,6 +122,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
       >
         <ProFormSelect
           name="target"
+          width="md"
           label={intl.formatMessage({
             id: 'pages.searchTable.updateForm.object',
             defaultMessage: '监控对象',
@@ -129,6 +134,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
         />
         <ProFormSelect
           name="template"
+          width="md"
           label={intl.formatMessage({
             id: 'pages.searchTable.updateForm.ruleProps.templateLabel',
             defaultMessage: '规则模板',
@@ -168,6 +174,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
       >
         <ProFormDateTimePicker
           name="time"
+          width="md"
           label={intl.formatMessage({
             id: 'pages.searchTable.updateForm.schedulingPeriod.timeLabel',
             defaultMessage: '开始时间',
@@ -190,7 +197,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
             id: 'pages.searchTable.updateForm.object',
             defaultMessage: '监控对象',
           })}
-          width="xs"
+          width="md"
           valueEnum={{
             month: '月',
             week: '周',
